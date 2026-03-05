@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE map PUBLIC "-//OASIS//DTD DITA Map//EN" "map.dtd">
+<!--
+  test-30-nodes.ditamap
+  Tests large mindmap rendering with exactly 30 leaf nodes.
+  5 branches × 6 children each = 30 leaves.
+  Designed for testing A3 and A2 format rendering.
+-->
+<map>
+  <title>Project Management Framework</title>
+
+  <!-- Branch 1: Planning (6 leaves) -->
+  <topicref navtitle="Planning">
+    <topicref navtitle="Vision Statement"/>
+    <topicref navtitle="Roadmap"/>
+    <topicref navtitle="Milestones"/>
+    <topicref navtitle="Resource Allocation"/>
+    <topicref navtitle="Risk Assessment"/>
+    <topicref navtitle="Budget Planning"/>
+  </topicref>
+
+  <!-- Branch 2: Development (6 leaves) -->
+  <topicref navtitle="Development">
+    <topicref navtitle="Architecture Design"/>
+    <topicref navtitle="Coding Standards"/>
+    <topicref navtitle="Code Review"/>
+    <topicref navtitle="Unit Testing"/>
+    <topicref navtitle="Integration Testing"/>
+    <topicref navtitle="Performance Testing"/>
+  </topicref>
+
+  <!-- Branch 3: Deployment (6 leaves) -->
+  <topicref navtitle="Deployment">
+    <topicref navtitle="CI/CD Pipeline"/>
+    <topicref navtitle="Staging Environment"/>
+    <topicref navtitle="Production Release"/>
+    <topicref navtitle="Rollback Procedures"/>
+    <topicref navtitle="Monitoring Setup"/>
+    <topicref navtitle="Incident Response"/>
+  </topicref>
+
+  <!-- Branch 4: Documentation (6 leaves) -->
+  <topicref navtitle="Documentation">
+    <topicref navtitle="API Reference"/>
+    <topicref navtitle="User Guide"/>
+    <topicref navtitle="Admin Manual"/>
+    <topicref navtitle="Release Notes"/>
+    <topicref navtitle="FAQ"/>
+    <topicref navtitle="Troubleshooting"/>
+  </topicref>
+
+  <!-- Branch 5: Team Management (6 leaves) -->
+  <topicref navtitle="Team Management">
+    <topicref navtitle="Onboarding"/>
+    <topicref navtitle="Skill Development"/>
+    <topicref navtitle="Sprint Planning"/>
+    <topicref navtitle="Retrospectives"/>
+    <topicref navtitle="Knowledge Sharing"/>
+    <topicref navtitle="Performance Reviews"/>
+  </topicref>
+</map>

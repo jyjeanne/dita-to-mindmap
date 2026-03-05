@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE map PUBLIC "-//OASIS//DTD DITA Map//EN" "map.dtd">
+<map title="Benchmark Map — 100 Nodes">
+  <!-- Branch 1: Product Overview (20 nodes) -->
+  <topicref navtitle="Product Overview" href="topics/introduction.dita">
+    <topicref navtitle="Mission Statement" href="topics/introduction.dita"/>
+    <topicref navtitle="Key Features" href="topics/introduction.dita">
+      <topicref navtitle="Feature Alpha" href="topics/introduction.dita"/>
+      <topicref navtitle="Feature Beta" href="topics/introduction.dita"/>
+      <topicref navtitle="Feature Gamma" href="topics/introduction.dita"/>
+      <topicref navtitle="Feature Delta" href="topics/introduction.dita"/>
+    </topicref>
+    <topicref navtitle="System Requirements" href="topics/prerequisites.dita">
+      <topicref navtitle="Hardware" href="topics/prerequisites.dita"/>
+      <topicref navtitle="Software" href="topics/prerequisites.dita"/>
+      <topicref navtitle="Network" href="topics/prerequisites.dita"/>
+    </topicref>
+    <topicref navtitle="Release History" href="topics/introduction.dita">
+      <topicref navtitle="Version 1.0" href="topics/introduction.dita"/>
+      <topicref navtitle="Version 2.0" href="topics/introduction.dita"/>
+      <topicref navtitle="Version 3.0" href="topics/introduction.dita"/>
+      <topicref navtitle="Version 4.0" href="topics/introduction.dita"/>
+    </topicref>
+    <topicref navtitle="Licensing" href="topics/introduction.dita">
+      <topicref navtitle="Community Edition" href="topics/introduction.dita"/>
+      <topicref navtitle="Enterprise Edition" href="topics/introduction.dita"/>
+      <topicref navtitle="Academic License" href="topics/introduction.dita"/>
+    </topicref>
+  </topicref>
+
+  <!-- Branch 2: Installation (20 nodes) -->
+  <topicref navtitle="Installation Guide" href="topics/install-steps.dita">
+    <topicref navtitle="Pre-Installation Checks" href="topics/prerequisites.dita">
+      <topicref navtitle="Disk Space" href="topics/prerequisites.dita"/>
+      <topicref navtitle="Permissions" href="topics/prerequisites.dita"/>
+      <topicref navtitle="Dependencies" href="topics/prerequisites.dita"/>
+    </topicref>
+    <topicref navtitle="Windows Installation" href="topics/install-steps.dita">
+      <topicref navtitle="MSI Installer" href="topics/install-steps.dita"/>
+      <topicref navtitle="Silent Install" href="topics/install-steps.dita"/>
+      <topicref navtitle="Chocolatey" href="topics/install-steps.dita"/>
+    </topicref>
+    <topicref navtitle="Linux Installation" href="topics/install-steps.dita">
+      <topicref navtitle="APT Package" href="topics/install-steps.dita"/>
+      <topicref navtitle="RPM Package" href="topics/install-steps.dita"/>
+      <topicref navtitle="Docker Image" href="topics/install-steps.dita"/>
+    </topicref>
+    <topicref navtitle="macOS Installation" href="topics/install-steps.dita">
+      <topicref navtitle="Homebrew" href="topics/install-steps.dita"/>
+      <topicref navtitle="DMG Installer" href="topics/install-steps.dita"/>
+    </topicref>
+    <topicref navtitle="Post-Installation" href="topics/install-steps.dita">
+      <topicref navtitle="Verify Installation" href="topics/install-steps.dita"/>
+      <topicref navtitle="Initial Configuration" href="topics/install-steps.dita"/>
+      <topicref navtitle="First Run Wizard" href="topics/install-steps.dita"/>
+    </topicref>
+  </topicref>
+
+  <!-- Branch 3: Configuration (20 nodes) -->
+  <topicref navtitle="Configuration" href="topics/install-steps.dita">
+    <topicref navtitle="General Settings" href="topics/install-steps.dita">
+      <topicref navtitle="Language" href="topics/install-steps.dita"/>
+      <topicref navtitle="Timezone" href="topics/install-steps.dita"/>
+      <topicref navtitle="Notifications" href="topics/install-steps.dita"/>
+    </topicref>
+    <topicref navtitle="Security Settings" href="topics/install-steps.dita">
+      <topicref navtitle="Authentication" href="topics/install-steps.dita"/>
+      <topicref navtitle="Authorization" href="topics/install-steps.dita"/>
+      <topicref navtitle="Audit Logging" href="topics/install-steps.dita"/>
+      <topicref navtitle="Encryption" href="topics/install-steps.dita"/>
+    </topicref>
+    <topicref navtitle="Database Settings" href="topics/install-steps.dita">
+      <topicref navtitle="Connection Pool" href="topics/install-steps.dita"/>
+      <topicref navtitle="Backup Schedule" href="topics/install-steps.dita"/>
+      <topicref navtitle="Migration Tools" href="topics/install-steps.dita"/>
+    </topicref>
+    <topicref navtitle="Integration Settings" href="topics/install-steps.dita">
+      <topicref navtitle="REST API" href="topics/install-steps.dita"/>
+      <topicref navtitle="LDAP" href="topics/install-steps.dita"/>
+      <topicref navtitle="SMTP" href="topics/install-steps.dita"/>
+      <topicref navtitle="Webhooks" href="topics/install-steps.dita"/>
+    </topicref>
+  </topicref>
+
+  <!-- Branch 4: User Guide (20 nodes) -->
+  <topicref navtitle="User Guide" href="topics/introduction.dita">
+    <topicref navtitle="Dashboard" href="topics/introduction.dita">
+      <topicref navtitle="Widgets" href="topics/introduction.dita"/>
+      <topicref navtitle="Customization" href="topics/introduction.dita"/>
+      <topicref navtitle="Shortcuts" href="topics/introduction.dita"/>
+    </topicref>
+    <topicref navtitle="Data Management" href="topics/introduction.dita">
+      <topicref navtitle="Import" href="topics/introduction.dita"/>
+      <topicref navtitle="Export" href="topics/introduction.dita"/>
+      <topicref navtitle="Bulk Operations" href="topics/introduction.dita"/>
+      <topicref navtitle="Data Validation" href="topics/introduction.dita"/>
+    </topicref>
+    <topicref navtitle="Reporting" href="topics/introduction.dita">
+      <topicref navtitle="Built-in Reports" href="topics/introduction.dita"/>
+      <topicref navtitle="Custom Reports" href="topics/introduction.dita"/>
+      <topicref navtitle="Scheduled Reports" href="topics/introduction.dita"/>
+    </topicref>
+    <topicref navtitle="Collaboration" href="topics/introduction.dita">
+      <topicref navtitle="Team Workspaces" href="topics/introduction.dita"/>
+      <topicref navtitle="Comments" href="topics/introduction.dita"/>
+      <topicref navtitle="Sharing" href="topics/introduction.dita"/>
+      <topicref navtitle="Notifications" href="topics/introduction.dita"/>
+    </topicref>
+  </topicref>
+
+  <!-- Branch 5: Troubleshooting & FAQ (18 nodes) -->
+  <topicref navtitle="Troubleshooting" href="topics/faq.dita">
+    <topicref navtitle="Common Errors" href="topics/faq.dita">
+      <topicref navtitle="Connection Refused" href="topics/faq.dita"/>
+      <topicref navtitle="Permission Denied" href="topics/faq.dita"/>
+      <topicref navtitle="Out of Memory" href="topics/faq.dita"/>
+      <topicref navtitle="Timeout Errors" href="topics/faq.dita"/>
+    </topicref>
+    <topicref navtitle="Performance Issues" href="topics/faq.dita">
+      <topicref navtitle="Slow Queries" href="topics/faq.dita"/>
+      <topicref navtitle="High CPU Usage" href="topics/faq.dita"/>
+      <topicref navtitle="Memory Leaks" href="topics/faq.dita"/>
+    </topicref>
+    <topicref navtitle="Upgrade Issues" href="topics/faq.dita">
+      <topicref navtitle="Schema Migration" href="topics/faq.dita"/>
+      <topicref navtitle="Plugin Compatibility" href="topics/faq.dita"/>
+      <topicref navtitle="Rollback Procedures" href="topics/faq.dita"/>
+    </topicref>
+    <topicref navtitle="FAQ" href="topics/faq.dita">
+      <topicref navtitle="Getting Started" href="topics/faq.dita"/>
+      <topicref navtitle="Billing" href="topics/faq.dita"/>
+      <topicref navtitle="Support Channels" href="topics/faq.dita"/>
+    </topicref>
+  </topicref>
+</map>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE map PUBLIC "-//OASIS//DTD DITA Map//EN" "map.dtd">
+<!--
+  test-wide-map.ditamap
+  Tests wide map with many siblings (12 nodes at root level).
+  Also tests auto-collapse behavior (> 6 children).
+-->
+<map>
+  <title>Wide Map Test (12 Siblings)</title>
+
+  <topicref href="topics/introduction.dita" navtitle="Node 01"/>
+  <topicref href="topics/objectives.dita" navtitle="Node 02"/>
+  <topicref href="topics/target-audience.dita" navtitle="Node 03"/>
+  <topicref href="topics/installation.dita" navtitle="Node 04"/>
+  <topicref href="topics/prerequisites.dita" navtitle="Node 05"/>
+  <topicref href="topics/install-steps.dita" navtitle="Node 06"/>
+  <topicref href="topics/faq.dita" navtitle="Node 07"/>
+  <topicref href="topics/introduction.dita" navtitle="Node 08"/>
+  <topicref href="topics/objectives.dita" navtitle="Node 09"/>
+  <topicref href="topics/target-audience.dita" navtitle="Node 10"/>
+  <topicref href="topics/installation.dita" navtitle="Node 11"/>
+  <topicref href="topics/prerequisites.dita" navtitle="Node 12"/>
+
+</map>

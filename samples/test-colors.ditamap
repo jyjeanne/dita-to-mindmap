@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE map PUBLIC "-//OASIS//DTD DITA Map//EN" "map.dtd">
+<!--
+  test-colors.ditamap
+  Tests node-level custom colors via topicmeta/data.
+  Uses <data name="mindmap-color" value="#RRGGBB"/> convention.
+-->
+<map>
+  <title>Color Test Map</title>
+
+  <topicref href="topics/introduction.dita" locktitle="yes">
+    <topicmeta>
+      <navtitle>Red Node</navtitle>
+      <data name="mindmap-color" value="#e74c3c"/>
+    </topicmeta>
+    <topicref href="topics/objectives.dita" locktitle="yes">
+      <topicmeta>
+        <navtitle>Green Child</navtitle>
+        <data name="mindmap-color" value="#27ae60"/>
+      </topicmeta>
+    </topicref>
+  </topicref>
+
+  <topicref href="topics/installation.dita" locktitle="yes">
+    <topicmeta>
+      <navtitle>Blue Node</navtitle>
+      <data name="mindmap-color" value="#2980b9"/>
+    </topicmeta>
+  </topicref>
+
+  <!-- This one has no custom color — uses depth-based default -->
+  <topicref href="topics/faq.dita" navtitle="Default Color Node"/>
+
+</map>

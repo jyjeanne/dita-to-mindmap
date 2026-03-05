@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mindmap xmlns:dita="http://dita.oasis-open.org/architecture/2005/">
+  <node id="root" title="Documentation Produit X" color="#1f77b4" icon="root" expanded="true">
+
+    <node id="introduction" title="Introduction" color="#ff7f0e" icon="info" expanded="true">
+      <node id="objectifs" title="Objectifs" color="#2ca02c" icon="target" expanded="false" url="objectifs.dita"/>
+      <node id="public" title="Public cible" color="#d62728" icon="users" expanded="false" url="public.dita"/>
+    </node>
+
+    <node id="installation" title="Installation" color="#9467bd" icon="gear" expanded="true">
+      <node id="prerequis" title="Prérequis" color="#8c564b" icon="check" expanded="false" url="prerequis.dita"/>
+      <node id="etapes" title="Étapes d'installation" color="#e377c2" icon="list" expanded="false" url="etapes.dita"/>
+    </node>
+
+    <node id="faq" title="FAQ" color="#7f7f7f" icon="question" expanded="false"/>
+
+  </node>
+</mindmap>

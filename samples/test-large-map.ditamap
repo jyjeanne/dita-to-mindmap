@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE map PUBLIC "-//OASIS//DTD DITA Map//EN" "map.dtd">
+<!--
+  test-large-map.ditamap
+  Tests multi-page PDF generation with >30 leaf nodes.
+  6 branches × ~6-8 children each = ~40 leaves.
+-->
+<map>
+  <title>Large Product Documentation</title>
+
+  <!-- Branch 1: Getting Started (8 leaves) -->
+  <topicref navtitle="Getting Started">
+    <topicref navtitle="System Requirements"/>
+    <topicref navtitle="Download"/>
+    <topicref navtitle="Installation Guide"/>
+    <topicref navtitle="Quick Start"/>
+    <topicref navtitle="First Project"/>
+    <topicref navtitle="Configuration"/>
+    <topicref navtitle="Environment Setup"/>
+    <topicref navtitle="Verification"/>
+  </topicref>
+
+  <!-- Branch 2: Core Concepts (7 leaves) -->
+  <topicref navtitle="Core Concepts">
+    <topicref navtitle="Architecture Overview"/>
+    <topicref navtitle="Data Model"/>
+    <topicref navtitle="Event System"/>
+    <topicref navtitle="Plugin Framework"/>
+    <topicref navtitle="Security Model"/>
+    <topicref navtitle="Caching Strategy"/>
+    <topicref navtitle="Error Handling"/>
+  </topicref>
+
+  <!-- Branch 3: User Guide (8 leaves) -->
+  <topicref navtitle="User Guide">
+    <topicref navtitle="Dashboard"/>
+    <topicref navtitle="Navigation"/>
+    <topicref navtitle="Search and Filter"/>
+    <topicref navtitle="Data Entry"/>
+    <topicref navtitle="Reports"/>
+    <topicref navtitle="Notifications"/>
+    <topicref navtitle="Settings"/>
+    <topicref navtitle="Profile Management"/>
+  </topicref>
+
+  <!-- Branch 4: API Reference (7 leaves) -->
+  <topicref navtitle="API Reference">
+    <topicref navtitle="Authentication"/>
+    <topicref navtitle="REST Endpoints"/>
+    <topicref navtitle="GraphQL Schema"/>
+    <topicref navtitle="Webhooks"/>
+    <topicref navtitle="Rate Limiting"/>
+    <topicref navtitle="Error Codes"/>
+    <topicref navtitle="SDKs"/>
+  </topicref>
+
+  <!-- Branch 5: Administration (6 leaves) -->
+  <topicref navtitle="Administration">
+    <topicref navtitle="User Management"/>
+    <topicref navtitle="Role Permissions"/>
+    <topicref navtitle="Audit Logging"/>
+    <topicref navtitle="Backup and Restore"/>
+    <topicref navtitle="Monitoring"/>
+    <topicref navtitle="Scaling"/>
+  </topicref>
+
+  <!-- Branch 6: Troubleshooting (6 leaves) -->
+  <topicref navtitle="Troubleshooting">
+    <topicref navtitle="Common Errors"/>
+    <topicref navtitle="Performance Issues"/>
+    <topicref navtitle="Connectivity"/>
+    <topicref navtitle="Data Recovery"/>
+    <topicref navtitle="Log Analysis"/>
+    <topicref navtitle="Support Contacts"/>
+  </topicref>
+</map>

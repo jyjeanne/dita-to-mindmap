@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE map PUBLIC "-//OASIS//DTD DITA Map//EN" "map.dtd">
+<!--
+  test-bilateral.ditamap
+  Tests bilateral (left+right) mindmap layout in HTML and PDF.
+  8 branches: first 4 appear on the right, last 4 on the left.
+  Includes 2-3 levels of nesting to verify recursive direction.
+  Total: 36 leaf nodes.
+-->
+<map>
+  <title>Software Engineering Handbook</title>
+
+  <!-- === RIGHT SIDE (branches 1-4) === -->
+
+  <!-- Branch 1: Requirements (5 leaves, 2 levels) -->
+  <topicref navtitle="Requirements">
+    <topicref navtitle="Stakeholder Analysis"/>
+    <topicref navtitle="User Stories"/>
+    <topicref navtitle="Acceptance Criteria"/>
+    <topicref navtitle="Non-Functional Reqs"/>
+    <topicref navtitle="Traceability Matrix"/>
+  </topicref>
+
+  <!-- Branch 2: Architecture (5 leaves, 3 levels deep) -->
+  <topicref navtitle="Architecture">
+    <topicref navtitle="System Design">
+      <topicref navtitle="Microservices"/>
+      <topicref navtitle="Event-Driven"/>
+    </topicref>
+    <topicref navtitle="Data Layer">
+      <topicref navtitle="SQL Databases"/>
+      <topicref navtitle="NoSQL Stores"/>
+    </topicref>
+    <topicref navtitle="API Gateway"/>
+  </topicref>
+
+  <!-- Branch 3: Development (4 leaves) -->
+  <topicref navtitle="Development">
+    <topicref navtitle="Version Control"/>
+    <topicref navtitle="Code Standards"/>
+    <topicref navtitle="Pair Programming"/>
+    <topicref navtitle="Refactoring"/>
+  </topicref>
+
+  <!-- Branch 4: Testing (5 leaves, 2 levels) -->
+  <topicref navtitle="Testing">
+    <topicref navtitle="Unit Tests"/>
+    <topicref navtitle="Integration Tests"/>
+    <topicref navtitle="E2E Tests"/>
+    <topicref navtitle="Load Testing"/>
+    <topicref navtitle="Security Scans"/>
+  </topicref>
+
+  <!-- === LEFT SIDE (branches 5-8) === -->
+
+  <!-- Branch 5: DevOps (4 leaves, 2 levels) -->
+  <topicref navtitle="DevOps">
+    <topicref navtitle="CI/CD Pipelines"/>
+    <topicref navtitle="Containerization">
+      <topicref navtitle="Docker"/>
+      <topicref navtitle="Kubernetes"/>
+    </topicref>
+    <topicref navtitle="Infrastructure as Code"/>
+  </topicref>
+
+  <!-- Branch 6: Security (4 leaves) -->
+  <topicref navtitle="Security">
+    <topicref navtitle="Authentication"/>
+    <topicref navtitle="Authorization"/>
+    <topicref navtitle="Encryption"/>
+    <topicref navtitle="Audit Logging"/>
+  </topicref>
+
+  <!-- Branch 7: Monitoring (4 leaves) -->
+  <topicref navtitle="Monitoring">
+    <topicref navtitle="Log Aggregation"/>
+    <topicref navtitle="Alerting"/>
+    <topicref navtitle="Dashboards"/>
+    <topicref navtitle="SLA Tracking"/>
+  </topicref>
+
+  <!-- Branch 8: Team Practices (5 leaves) -->
+  <topicref navtitle="Team Practices">
+    <topicref navtitle="Agile Ceremonies"/>
+    <topicref navtitle="Knowledge Base"/>
+    <topicref navtitle="Onboarding Guide"/>
+    <topicref navtitle="Incident Postmortems"/>
+    <topicref navtitle="Tech Radar"/>
+  </topicref>
+</map>

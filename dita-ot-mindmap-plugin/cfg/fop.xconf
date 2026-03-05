@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<!--
+  FOP configuration for the mindmap-pdf transtype.
+  Enables auto-detection of system fonts for proper rendering of
+  non-Latin characters (CJK, Arabic, Cyrillic, etc.) in PDF output.
+-->
+<fop version="1.0">
+  <strict-validation>false</strict-validation>
+  <base>.</base>
+  <source-resolution>72</source-resolution>
+  <target-resolution>72</target-resolution>
+
+  <renderers>
+    <renderer mime="application/pdf">
+      <filterList>
+        <value>flate</value>
+      </filterList>
+      <fonts>
+        <!-- Auto-detect system fonts for non-Latin character support -->
+        <auto-detect/>
+      </fonts>
+    </renderer>
+  </renderers>
+</fop>

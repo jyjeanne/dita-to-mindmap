@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE map PUBLIC "-//OASIS//DTD DITA Map//EN" "map.dtd">
+<!--
+  test-edge-cases.ditamap
+  Tests DITA edge cases for mindmap rendering:
+  - topicgroup (transparent container)
+  - topichead (label-only node)
+  - @processing-role="resource-only" (excluded)
+  - @toc="no" (excluded)
+  - @scope="external" (external link)
+  - Special characters in navtitles
+  - Deep nesting (4 levels)
+-->
+<map>
+  <title>Edge Case Test Map</title>
+
+  <!-- Key definitions: should NOT appear in mindmap -->
+  <keydef keys="product-name" processing-role="resource-only">
+    <topicmeta>
+      <navtitle>Product X</navtitle>
+    </topicmeta>
+  </keydef>
+
+  <!-- topichead: label-only node (no @href) -->
+  <topichead navtitle="Section A - Topichead">
+    <topicref href="topics/introduction.dita" navtitle="Introduction"/>
+    <topicref href="topics/objectives.dita" navtitle="Objectifs"/>
+  </topichead>
+
+  <!-- topicgroup: transparent container, children promoted -->
+  <topicgroup>
+    <topicref href="topics/installation.dita" navtitle="Installation">
+      <topicref href="topics/prerequisites.dita" navtitle="Prerequis"/>
+      <topicref href="topics/install-steps.dita" navtitle="Etapes d'installation"/>
+    </topicref>
+  </topicgroup>
+
+  <!-- toc="no": should NOT appear in mindmap -->
+  <topicref href="topics/faq.dita" navtitle="Hidden FAQ" toc="no"/>
+
+  <!-- External link: should appear with URL as fallback -->
+  <topicref href="https://example.com/guide" scope="external" format="html"
+            navtitle="External Guide"/>
+
+  <!-- Special characters in navtitle -->
+  <topicref href="topics/faq.dita" navtitle='Caracteres speciaux: &amp; &lt; &gt; "guillemets"'/>
+
+  <!-- Deep nesting (4 levels) -->
+  <topicref href="topics/introduction.dita" navtitle="Level 1">
+    <topicref href="topics/objectives.dita" navtitle="Level 2">
+      <topicref href="topics/prerequisites.dita" navtitle="Level 3">
+        <topicref href="topics/faq.dita" navtitle="Level 4"/>
+      </topicref>
+    </topicref>
+  </topicref>
+
+</map>

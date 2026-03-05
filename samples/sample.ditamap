@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE map PUBLIC "-//OASIS//DTD DITA Map//EN" "map.dtd">
+<map>
+  <title>Documentation Produit X</title>
+
+  <topicref href="topics/introduction.dita" navtitle="Introduction">
+    <topicref href="topics/objectives.dita" navtitle="Objectifs"/>
+    <topicref href="topics/target-audience.dita" navtitle="Public cible"/>
+  </topicref>
+
+  <topicref href="topics/installation.dita" navtitle="Installation">
+    <topicref href="topics/prerequisites.dita" navtitle="Prerequis"/>
+    <topicref href="topics/install-steps.dita" navtitle="Etapes d installation"/>
+  </topicref>
+
+  <topicref href="topics/faq.dita" navtitle="FAQ"/>
+</map>

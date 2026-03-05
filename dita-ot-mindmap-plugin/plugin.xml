@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="https://www.dita-ot.org/rng/plugin.rnc"
+            type="application/relax-ng-compact-syntax"?>
+<plugin id="com.github.jyjeanne.mindmap">
+
+  <!-- Dependencies -->
+  <require plugin="org.dita.base"/>
+  <require plugin="org.dita.pdf2"/>
+  <require plugin="org.dita.pdf2.fop"/>
+
+  <!-- Transtype: mindmap-html (interactive HTML mindmap via jsMind) -->
+  <transtype name="mindmap-html" desc="Interactive HTML mindmap using jsMind">
+    <param name="jsmind.theme" type="enum"
+           desc="jsMind color theme for the mindmap visualization">
+      <val default="true">primary</val>
+      <val>warning</val>
+      <val>danger</val>
+      <val>success</val>
+      <val>info</val>
+      <val>greensea</val>
+      <val>nephritis</val>
+      <val>belizehole</val>
+      <val>wisteria</val>
+      <val>asphalt</val>
+      <val>orange</val>
+      <val>pumpkin</val>
+      <val>pomegranate</val>
+      <val>clouds</val>
+      <val>asbestos</val>
+    </param>
+    <param name="jsmind.editable" type="enum"
+           desc="Whether the mindmap nodes are editable by the user">
+      <val default="true">false</val>
+      <val>true</val>
+    </param>
+    <param name="jsmind.mode" type="enum"
+           desc="Mindmap layout mode: full (both sides) or side (right only)">
+      <val default="true">full</val>
+      <val>side</val>
+    </param>
+    <param name="mindmap.lang" type="string"
+           desc="HTML lang attribute (BCP 47 language tag, e.g. en, fr, de)">
+      <val default="true">en</val>
+    </param>
+  </transtype>
+
+  <!-- Transtype: mindmap-pdf (PDF document with SVG mindmap tree diagram) -->
+  <transtype name="mindmap-pdf" desc="PDF document with SVG mindmap tree diagram">
+    <param name="mindmap.page.size" type="enum"
+           desc="Page size and orientation for the PDF output">
+      <val default="true">A4-landscape</val>
+      <val>A3-landscape</val>
+      <val>A2-landscape</val>
+      <val>letter-landscape</val>
+    </param>
+    <param name="mindmap.max.chars" type="string"
+           desc="Maximum characters per node label before truncation (default: 20)">
+      <val default="true">20</val>
+    </param>
+  </transtype>
+
+  <!-- Transtype: mindmap-svg (standalone SVG mindmap diagram) -->
+  <transtype name="mindmap-svg" desc="Standalone SVG mindmap tree diagram">
+    <param name="mindmap.page.size" type="enum"
+           desc="Layout size hint (affects bilateral vs. unilateral layout)">
+      <val default="true">A4-landscape</val>
+      <val>A3-landscape</val>
+      <val>A2-landscape</val>
+      <val>letter-landscape</val>
+    </param>
+    <param name="mindmap.max.chars" type="string"
+           desc="Maximum characters per node label before truncation (default: 20)">
+      <val default="true">20</val>
+    </param>
+  </transtype>
+
+  <!-- Register Ant build file -->
+  <feature extension="ant.import" file="build.xml"/>
+
+</plugin>

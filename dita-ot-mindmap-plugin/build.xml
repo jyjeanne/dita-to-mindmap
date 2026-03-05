@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="dita2mindmap" xmlns:dita="http://dita-ot.sourceforge.net">
+
+  <!-- ================================================================
+       Target: dita2mindmap-html
+       Generates an interactive HTML mindmap from a DITA map using jsMind.
+       Pipeline: preprocess → XSLT 3.0 (Saxon) → standalone HTML
+       ================================================================ -->
+  <target name="dita2mindmap-html"
+          depends="dita2mindmap-html.init,
+                   build-init,
+                   preprocess,
+                   dita2mindmap-html.transform,
+                   dita2mindmap-html.copy-resources"/>
+
+  <target name="dita2mindmap-html.init">
+    <property name="mindmap.plugin.dir"
+              location="${dita.plugin.com.github.jyjeanne.mindmap.dir}"/>
+    <property name="jsmind.theme" value="primary"/>
+    <property name="jsmind.editable" value="false"/>
+    <property name="jsmind.mode" value="full"/>
+    <property name="mindmap.lang" value="en"/>
+  </target>
+
+  <target name="dita2mindmap-html.transform">
+    <xslt basedir="${dita.temp.dir}"
+          destdir="${dita.output.dir}"
+          style="${mindmap.plugin.dir}/xsl/map2mindmap-html.xsl"
+          includes="${user.input.file}"
+          extension=".html"
+          classpathref="dost.class.path"
+          force="true">
+      <factory name="net.sf.saxon.TransformerFactoryImpl"/>
+      <param name="jsmind-theme" expression="${jsmind.theme}"/>
+      <param name="jsmind-editable" expression="${jsmind.editable}"/>
+      <param name="jsmind-mode" expression="${jsmind.mode}"/>
+      <param name="mindmap-lang" expression="${mindmap.lang}"/>
+    </xslt>
+  </target>
+
+  <target name="dita2mindmap-html.copy-resources">
+    <!-- Copy mindmap CSS -->
+    <copy todir="${dita.output.dir}" failonerror="false">
+      <fileset dir="${mindmap.plugin.dir}/resources">
+        <include name="mindmap.css"/>
+      </fileset>
+    </copy>
+    <!-- Copy jsMind library files (JS + CSS) -->
+    <copy todir="${dita.output.dir}/jsmind" failonerror="false">
+      <fileset dir="${mindmap.plugin.dir}/resources/jsmind">
+        <include name="jsmind.js"/>
+        <include name="jsmind.draggable-node.js"/>
+        <include name="jsmind.screenshot.js"/>
+        <include name="jsmind.css"/>
+      </fileset>
+    </copy>
+  </target>
+
+  <!-- ================================================================
+       Target: dita2mindmap-svg
+       Generates a standalone SVG mindmap tree diagram from a DITA map.
+       Pipeline: preprocess → XSLT 3.0 (Saxon) → standalone SVG
+       ================================================================ -->
+  <target name="dita2mindmap-svg"
+          depends="dita2mindmap-svg.init,
+                   build-init,
+                   preprocess,
+                   dita2mindmap-svg.transform"/>
+
+  <target name="dita2mindmap-svg.init">
+    <property name="mindmap.plugin.dir"
+              location="${dita.plugin.com.github.jyjeanne.mindmap.dir}"/>
+    <property name="mindmap.page.size" value="A4-landscape"/>
+    <property name="mindmap.max.chars" value="20"/>
+  </target>
+
+  <target name="dita2mindmap-svg.transform">
+    <xslt basedir="${dita.temp.dir}"
+          destdir="${dita.output.dir}"
+          style="${mindmap.plugin.dir}/xsl/map2mindmap-svg.xsl"
+          includes="${user.input.file}"
+          extension=".svg"
+          classpathref="dost.class.path"
+          force="true">
+      <factory name="net.sf.saxon.TransformerFactoryImpl"/>
+      <param name="page-size" expression="${mindmap.page.size}"/>
+      <param name="max-chars" expression="${mindmap.max.chars}"/>
+    </xslt>
+  </target>
+
+  <!-- ================================================================
+       Target: dita2mindmap-pdf
+       Generates a PDF with an SVG mindmap tree diagram.
+       Pipeline: preprocess → XSLT 3.0 (Saxon) → XSL-FO → FOP → PDF
+       ================================================================ -->
+  <target name="dita2mindmap-pdf"
+          depends="dita2mindmap-pdf.init,
+                   build-init,
+                   preprocess,
+                   dita2mindmap-pdf.generate-fo,
+                   dita2mindmap-pdf.render-pdf"/>
+
+  <target name="dita2mindmap-pdf.init">
+    <property name="mindmap.plugin.dir"
+              location="${dita.plugin.com.github.jyjeanne.mindmap.dir}"/>
+    <property name="mindmap.page.size" value="A4-landscape"/>
+    <property name="mindmap.max.chars" value="20"/>
+    <!-- Locate FOP from the pdf2.fop plugin -->
+    <property name="fop.plugin.dir"
+              location="${dita.plugin.org.dita.pdf2.fop.dir}"/>
+  </target>
+
+  <target name="dita2mindmap-pdf.generate-fo">
+    <xslt basedir="${dita.temp.dir}"
+          destdir="${dita.temp.dir}/fo"
+          style="${mindmap.plugin.dir}/xsl/map2mindmap-fo.xsl"
+          includes="${user.input.file}"
+          extension=".fo"
+          classpathref="dost.class.path"
+          force="true">
+      <factory name="net.sf.saxon.TransformerFactoryImpl"/>
+      <param name="page-size" expression="${mindmap.page.size}"/>
+      <param name="max-chars" expression="${mindmap.max.chars}"/>
+    </xslt>
+  </target>
+
+  <target name="dita2mindmap-pdf.render-pdf">
+    <!-- Build FOP classpath from pdf2.fop plugin libs -->
+    <path id="fop.class.path">
+      <fileset dir="${fop.plugin.dir}/lib" includes="*.jar"/>
+      <fileset dir="${dita.dir}/lib" includes="*.jar"/>
+    </path>
+
+    <!-- Create output directory if needed -->
+    <mkdir dir="${dita.output.dir}"/>
+
+    <!--
+      Iterate over all generated .fo files in the temp/fo directory.
+      This handles any input extension (.ditamap, .bookmap, etc.)
+      and supports future multi-file scenarios.
+    -->
+    <apply executable="java" failonerror="true" parallel="false"
+           dest="${dita.output.dir}">
+      <arg value="-cp"/>
+      <arg pathref="fop.class.path"/>
+      <arg value="org.apache.fop.cli.Main"/>
+      <arg value="-c"/>
+      <arg value="${mindmap.plugin.dir}/cfg/fop.xconf"/>
+      <arg value="-fo"/>
+      <srcfile/>
+      <arg value="-pdf"/>
+      <targetfile/>
+      <fileset dir="${dita.temp.dir}/fo" includes="*.fo"/>
+      <mapper type="glob" from="*.fo" to="*.pdf"/>
+    </apply>
+  </target>
+
+</project>
